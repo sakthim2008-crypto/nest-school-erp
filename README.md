@@ -65,18 +65,13 @@ This repository is 100% pre-configured for Vercel.
 
 ### Method 1: Git-Integrated Deployment (Recommended)
 
-1. **Push this project to your GitHub account**:
-   ```bash
-   git add .
-   git commit -m "feat: complete NEST School ERP production release"
-   git remote add origin https://github.com/<your-username>/<your-repo-name>.git
-   git push -u origin main
-   ```
+1. **GitHub Repository**:
+   - Repository URL: [https://github.com/sakthim2008-crypto/nest-school-erp](https://github.com/sakthim2008-crypto/nest-school-erp)
+   - Branch: `main`
 
 2. **Deploy on Vercel**:
-   - Go to [vercel.com](https://vercel.com) and log in.
-   - Click **Add New...** > **Project**.
-   - Select your newly pushed GitHub repository.
+   - Go to [vercel.com/new](https://vercel.com/new) and log in.
+   - Select the **`nest-school-erp`** repository and click **Import**.
    - Vercel automatically detects the **Vite** framework preset:
      - **Build Command**: `npm run build`
      - **Output Directory**: `dist`

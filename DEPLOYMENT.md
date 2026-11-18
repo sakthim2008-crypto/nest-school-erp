@@ -21,17 +21,12 @@ This guide provides end-to-end instructions for deploying **The NEST School ERP 
 
 ## 🚀 Quick Deployment to Vercel
 
-### Step 1: Create GitHub Repository
+### Step 1: GitHub Repository
 
-Run the following commands in the project folder:
+The repository has been created and synced:
+👉 **[https://github.com/sakthim2008-crypto/nest-school-erp](https://github.com/sakthim2008-crypto/nest-school-erp)**
 
-```bash
-git add .
-git commit -m "feat: complete NEST School ERP production release ready for Vercel"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<your-repo-name>.git
-git push -u origin main
-```
+Branch: `main` (Fully up to date)
 
 ### Step 2: Import into Vercel
 
