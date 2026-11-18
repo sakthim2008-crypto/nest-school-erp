@@ -1,0 +1,531 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-navy font-sans antialiased min-h-screen overflow-x-hidden transition-colors duration-200;
+    background-color: #FFFDF9;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(196, 181, 253, 0.22) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(125, 211, 252, 0.22) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(167, 243, 208, 0.2) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(253, 186, 171, 0.18) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(253, 230, 138, 0.14) 0px, transparent 50%),
+      radial-gradient(#CBD5E1 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 36px 36px;
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 18px 18px;
+    background-attachment: fixed;
+  }
+
+  /* Extraordinary Midnight Cosmic Dark Mode Theme */
+  .dark body {
+    background-color: #080C16;
+    color: #F1F5F9;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.22) 0px, transparent 45%),
+      radial-gradient(at 100% 0%, rgba(56, 189, 248, 0.2) 0px, transparent 45%),
+      radial-gradient(at 100% 100%, rgba(52, 211, 153, 0.18) 0px, transparent 45%),
+      radial-gradient(at 0% 100%, rgba(244, 114, 182, 0.15) 0px, transparent 45%),
+      radial-gradient(at 50% 50%, rgba(251, 191, 36, 0.1) 0px, transparent 50%),
+      radial-gradient(#1E293B 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 36px 36px;
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 18px 18px;
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-navy tracking-tight;
+  }
+
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: #FFFFFF !important;
+  }
+}
+
+/* Embedded Theme Transition Animation */
+.theme-transitioning,
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
+  transition: background-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              fill 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              stroke 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.45s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-delay: 0s !important;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+/* Playful Pop Button Animation */
+.pop-btn {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.pop-btn:hover {
+  transform: translateY(-2px);
+}
+
+.pop-btn:active {
+  transform: scale(0.96);
+}
+
+/* Premium Rounded Pastel Card Style */
+.dashboard-card {
+  @apply bg-white/95 backdrop-blur-md rounded-3xl border border-slate-200/90 shadow-pastel transition-all duration-300;
+}
+
+.dashboard-card:hover {
+  @apply shadow-pastel-hover border-lavender-300/80 -translate-y-1;
+}
+
+/* Dark Mode Sophisticated Card Styling with Neon Glow */
+.dark .dashboard-card {
+  background-color: #0E1729 !important;
+  border-color: rgba(148, 163, 184, 0.18) !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.55), 0 0 15px -3px rgba(124, 58, 237, 0.12) !important;
+  color: #F8FAFC !important;
+}
+
+.dark .dashboard-card:hover {
+  border-color: rgba(196, 181, 253, 0.55) !important;
+  box-shadow: 0 16px 36px -5px rgba(0, 0, 0, 0.7), 0 0 25px 2px rgba(139, 92, 246, 0.28) !important;
+  transform: translateY(-3px) scale(1.004) !important;
+}
+
+/* Educational Floating Badge */
+.edu-pill {
+  @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-2xl text-xs font-extrabold tracking-wide transition-all;
+}
+
+/* Gradient Text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-sky-600 to-teal-600;
+}
+
+.dark .gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#C4B5FD] via-[#7DD3FC] to-[#A7F3D0];
+}
+
+/* Animated Floating Elements */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes float-gentle {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.03); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out 2.5s infinite;
+}
+
+.animate-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+/* Playful Student-Friendly Animations & Micro-Interactions */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg) scale(1.02); }
+  75% { transform: rotate(3deg) scale(1.02); }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes star-pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes rainbow-border {
+  0% { border-color: #C4B5FD; }
+  25% { border-color: #7DD3FC; }
+  50% { border-color: #A7F3D0; }
+  75% { border-color: #FDBAAB; }
+  100% { border-color: #C4B5FD; }
+}
+
+@keyframes shimmer-sweep {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes neon-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.2), inset 0 0 10px rgba(139, 92, 246, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.4), inset 0 0 15px rgba(139, 92, 246, 0.2);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 2.5s ease-in-out infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 3s ease-in-out infinite;
+}
+
+.animate-star-pop {
+  animation: star-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.rainbow-glow {
+  animation: rainbow-border 6s linear infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+.dark-neon-glow {
+  animation: neon-glow-pulse 4s ease-in-out infinite;
+}
+
+/* Progress Rings */
+.progress-ring-circle {
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+/* Custom Soft Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.7);
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+  border: 2px solid rgba(30, 41, 59, 0.8);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A78BFA;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #8B5CF6;
+}
+
+/* ========================================================
+   UNIVERSAL HIGH-CONTRAST DARK MODE OVERRIDES & TEXT CLARITY
+   Ensures 100% visible text and eliminate any white bleeds
+   ======================================================== */
+
+.dark .bg-white,
+.dark .bg-white\/95,
+.dark .bg-white\/90,
+.dark .bg-white\/85,
+.dark .bg-white\/80,
+.dark .bg-white\/75,
+.dark .bg-white\/70,
+.dark .bg-white\/60,
+.dark .bg-white\/50 {
+  background-color: #0E1729 !important;
+}
+
+/* Deep Dark Card Surfaces */
+.dark .bg-\[\#FAF8FF\],
+.dark .bg-\[\#F0FDF4\],
+.dark .bg-\[\#F0F9FF\],
+.dark .bg-\[\#FFF5F5\],
+.dark .bg-\[\#FFFDF0\],
+.dark .bg-\[\#FFFBEB\],
+.dark .bg-\[\#FFFDF7\],
+.dark .bg-\[\#FAF5FF\] {
+  background-color: #111C30 !important;
+}
+
+.dark .bg-\[\#FAF8FF\]\/60,
+.dark .bg-\[\#F0FDF4\]\/60,
+.dark .bg-\[\#F0F9FF\]\/60,
+.dark .bg-\[\#FFF5F5\]\/60,
+.dark .bg-\[\#FFFDF0\]\/60,
+.dark .bg-\[\#FAF8FF\]\/40,
+.dark .bg-\[\#F0FDF4\]\/40 {
+  background-color: rgba(17, 28, 48, 0.85) !important;
+}
+
+.dark .bg-slate-50,
+.dark .bg-slate-50\/90,
+.dark .bg-slate-50\/80,
+.dark .bg-slate-50\/70 {
+  background-color: #0A111F !important;
+}
+
+.dark .bg-slate-100,
+.dark .bg-slate-100\/80,
+.dark .bg-slate-100\/90 {
+  background-color: #131F35 !important;
+}
+
+/* Text Visibility Overrides in Dark Mode */
+.dark .text-navy,
+.dark .text-navy-950,
+.dark .text-navy-900,
+.dark .text-navy-800 {
+  color: #FFFFFF !important;
+}
+
+.dark .text-navy-700,
+.dark .text-navy-600 {
+  color: #E2E8F0 !important;
+}
+
+.dark .text-slate-900,
+.dark .text-slate-800 {
+  color: #FFFFFF !important;
+}
+
+.dark .text-slate-700,
+.dark .text-slate-600 {
+  color: #E2E8F0 !important;
+}
+
+.dark .text-slate-500 {
+  color: #CBD5E1 !important;
+}
+
+.dark .text-slate-400 {
+  color: #94A3B8 !important;
+}
+
+/* Semantic and Category High-Contrast Neon Accents in Dark Mode */
+.dark .text-purple-900,
+.dark .text-purple-800 {
+  color: #E9D5FF !important;
+}
+
+.dark .text-purple-700,
+.dark .text-purple-600 {
+  color: #C4B5FD !important;
+}
+
+.dark .text-emerald-900,
+.dark .text-emerald-800 {
+  color: #D1FAE5 !important;
+}
+
+.dark .text-emerald-700,
+.dark .text-emerald-600 {
+  color: #A7F3D0 !important;
+}
+
+.dark .text-sky-900,
+.dark .text-sky-800 {
+  color: #E0F2FE !important;
+}
+
+.dark .text-sky-700,
+.dark .text-sky-600 {
+  color: #7DD3FC !important;
+}
+
+.dark .text-amber-900,
+.dark .text-amber-800 {
+  color: #FEF3C7 !important;
+}
+
+.dark .text-amber-700,
+.dark .text-amber-600 {
+  color: #FDE68A !important;
+}
+
+.dark .text-red-900,
+.dark .text-red-800,
+.dark .text-rose-900,
+.dark .text-rose-800 {
+  color: #FFE4E6 !important;
+}
+
+.dark .text-red-700,
+.dark .text-red-600,
+.dark .text-rose-700,
+.dark .text-rose-600 {
+  color: #FDBAAB !important;
+}
+
+/* Form Inputs, Dropdowns, and Textareas */
+.dark label {
+  color: #F8FAFC !important;
+}
+
+.dark input:not([type="checkbox"]):not([type="radio"]),
+.dark select,
+.dark textarea {
+  background-color: #0A111F !important;
+  color: #FFFFFF !important;
+  border-color: #334155 !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #64748B !important;
+}
+
+/* Borders in Dark Mode */
+.dark .border-purple-200,
+.dark .border-purple-300,
+.dark .border-\[\#C4B5FD\] {
+  border-color: rgba(167, 139, 250, 0.45) !important;
+}
+
+.dark .border-emerald-200,
+.dark .border-emerald-300,
+.dark .border-\[\#A7F3D0\] {
+  border-color: rgba(52, 211, 153, 0.45) !important;
+}
+
+.dark .border-sky-200,
+.dark .border-sky-300,
+.dark .border-\[\#7DD3FC\] {
+  border-color: rgba(56, 189, 248, 0.45) !important;
+}
+
+.dark .border-amber-200,
+.dark .border-amber-300,
+.dark .border-\[\#FDE68A\] {
+  border-color: rgba(251, 191, 36, 0.45) !important;
+}
+
+.dark .border-red-200,
+.dark .border-rose-200,
+.dark .border-\[\#FDBAAB\] {
+  border-color: rgba(244, 114, 182, 0.45) !important;
+}
+
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-200\/90,
+.dark .border-slate-200\/80,
+.dark .border-slate-200\/60 {
+  border-color: rgba(51, 65, 85, 0.6) !important;
+}
+
+/* Dark mode pastel card tint adaptations */
+.dark .from-white {
+  --tw-gradient-from: #0E1729 var(--tw-gradient-from-position);
+}
+
+.dark .to-\[\#F0FDF4\] {
+  --tw-gradient-to: rgba(6, 78, 59, 0.3) var(--tw-gradient-to-position);
+}
+
+.dark .to-\[\#F0F9FF\] {
+  --tw-gradient-to: rgba(12, 74, 110, 0.3) var(--tw-gradient-to-position);
+}
+
+.dark .to-\[\#FAF8FF\] {
+  --tw-gradient-to: rgba(76, 29, 149, 0.3) var(--tw-gradient-to-position);
+}
+
+.dark .to-\[\#FFF5F5\] {
+  --tw-gradient-to: rgba(159, 18, 57, 0.25) var(--tw-gradient-to-position);
+}
+
+.dark .to-\[\#FFFDF0\] {
+  --tw-gradient-to: rgba(120, 53, 15, 0.25) var(--tw-gradient-to-position);
+}
+
+.dark .to-\[\#FFFBEB\] {
+  --tw-gradient-to: rgba(120, 53, 15, 0.22) var(--tw-gradient-to-position);
+}
+
+/* Dark table styles */
+.dark table thead th {
+  background-color: #0A111F !important;
+  color: #F8FAFC !important;
+  border-color: #334155 !important;
+}
+
+.dark table tbody tr {
+  border-color: #1E293B !important;
+  color: #E2E8F0 !important;
+}
+
+.dark table tbody tr:hover {
+  background-color: rgba(30, 41, 59, 0.6) !important;
+}
+
+/* Dark Recharts Tooltip and SVG text styling */
+.dark .recharts-cartesian-grid line {
+  stroke: rgba(51, 65, 85, 0.4) !important;
+}
+
+.dark .recharts-text,
+.dark .recharts-cartesian-axis-tick text {
+  fill: #94A3B8 !important;
+}
+
+.dark .recharts-default-tooltip {
+  background-color: #0E1729 !important;
+  border-color: #334155 !important;
+  color: #F8FAFC !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6) !important;
+}
+
+.dark .recharts-tooltip-item {
+  color: #E2E8F0 !important;
+}
+
+.dark .recharts-legend-item-text {
+  color: #E2E8F0 !important;
+}
+
+/* Print Styles */
+@media print {
+  aside, header, .no-print {
+    display: none !important;
+  }
+  body, main {
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
